@@ -7,7 +7,7 @@ public abstract class Monster {
 
 	public Monster(String name) {
 		this.name = name;
-		this.hp = 45;
+		this.hp = 50;
 		this.alive = true;
 	}
 
