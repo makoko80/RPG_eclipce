@@ -1,4 +1,4 @@
-package Rpg;
+package RPG;
 
 public abstract class Monster {
 	int hp;
@@ -7,7 +7,7 @@ public abstract class Monster {
 
 	public Monster(String name) {
 		this.name = name;
-		this.hp = 50;
+		this.hp = 40;
 		this.alive = true;
 	}
 

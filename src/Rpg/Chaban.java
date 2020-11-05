@@ -1,4 +1,4 @@
-package Rpg;
+package RPG;
 
 import java.util.Scanner;
 

@@ -1,11 +1,12 @@
-package Rpg;
+package RPG;
 
 public class Main {
 
 	public static void main(String[] args) throws Exception {
 		Hero h = new Hero();
 		Battle b = new Battle();
-		//冒険（茶番）の始まり
+		//冒険（茶番）の始まりdao
+
 
 		//				int branch = Chaban.prologue(h);
 		//				if (branch == 4) {

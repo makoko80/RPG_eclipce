@@ -1,4 +1,4 @@
-package Rpg;
+package RPG;
 
 public class Charcter {
 	String name;
