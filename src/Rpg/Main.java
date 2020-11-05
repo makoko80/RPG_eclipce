@@ -5,7 +5,7 @@ public class Main {
 	public static void main(String[] args) throws Exception {
 		Hero h = new Hero();
 		Battle b = new Battle();
-		//冒険（茶番）の始まりdao
+		//冒険（茶番）の始まりだじょー
 
 
 		//				int branch = Chaban.prologue(h);
