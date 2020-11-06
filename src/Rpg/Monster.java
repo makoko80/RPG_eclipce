@@ -1,4 +1,4 @@
-package RPG;
+package Rpg;
 
 public abstract class Monster {
 	int hp;

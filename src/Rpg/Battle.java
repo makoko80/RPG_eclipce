@@ -1,4 +1,4 @@
-package RPG;
+package Rpg;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class Battle {
 
-	public void enCount(Hero h) throws Exception {
+	public void enCount(Hero h)  {
 		int ra = new Random().nextInt(3) + 1;//敵の出現数のランダム整数
 
 		ArrayList<Monster> enemy = new ArrayList<>();
