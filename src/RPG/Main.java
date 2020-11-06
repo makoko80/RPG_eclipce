@@ -6,6 +6,7 @@ public class Main {
 		Hero h = new Hero();
 		Battle b = new Battle();
 		//冒険（茶番）の始まりだじょー 1234!!
+		//わからん！
 
 
 		//				int branch = Chaban.prologue(h);
