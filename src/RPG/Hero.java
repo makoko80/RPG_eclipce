@@ -2,14 +2,17 @@ package RPG;
 
 import java.util.Random;
 
-
-
 public class Hero {
 	String name;
 	int hp;
 	final int FULLHP = 50;
 	int mp;
 	int pow;
+	int level;
+	int exp;
+	Weapon weapon;
+	Armor armor;
+	static int money;
 
 	public Hero() {
 		this.name = "ハロルド";
@@ -29,7 +32,7 @@ public class Hero {
 		} else {
 			System.out.println(this.name + "の攻撃");
 			ps.hp -= this.pow;
-			System.out.println(ps.name + "に" +this.pow + "のダメージ");
+			System.out.println(ps.name + "に" + this.pow + "のダメージ");
 			return ps.hp;
 		}
 	}

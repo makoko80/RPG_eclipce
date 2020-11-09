@@ -9,11 +9,11 @@ public class Main {
 		//わからん！
 
 
-		//				int branch = Chaban.prologue(h);
-		//				if (branch == 4) {
-		//					System.out.println("かもね");
-		//					System.exit(0);
-		//				}
+						int branch = Chaban.prologue(h);
+						if (branch == 4) {
+							System.out.println("かもね");
+							System.exit(0);
+						}
 		b.enCount(h);
 
 	}
