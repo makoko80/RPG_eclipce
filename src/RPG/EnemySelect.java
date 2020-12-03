@@ -3,8 +3,8 @@ package Rpg;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Com {
-	public static Monster com(ArrayList<Monster> m) {
+public class EnemySelect {
+	public static Monster select(ArrayList<Monster> m) {//敵3体までを選択するメソッド。
 
 		if (m.size() == 1) {
 			return m.get(0);

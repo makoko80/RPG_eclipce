@@ -1,4 +1,4 @@
-package RPG;
+package Rpg;
 
 import java.util.Random;
 
@@ -7,9 +7,7 @@ public class Slime extends Monster {
 
 	public Slime(String name) {
 		super(name);
-		this.name = super.name;
-		this.hp = 10;
-		this.pow = 5;
+		this.pow = 10;
 
 	}
 

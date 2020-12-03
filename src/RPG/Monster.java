@@ -1,4 +1,4 @@
-package RPG;
+package Rpg;
 
 public abstract class Monster {
 	int hp;
@@ -7,7 +7,7 @@ public abstract class Monster {
 
 	public Monster(String name) {
 		this.name = name;
-		this.hp = 40;
+		this.hp = 10;
 		this.alive = true;
 	}
 
@@ -22,14 +22,16 @@ public abstract class Monster {
 		this.alive = false;
 	}
 
-	public boolean checkAlive(Hero h, Monster enemy) {
+	public void checkAlive(Hero h, Monster enemy) {
 		if (this.hp > 0 && this.alive == true) {
 			this.attack(h);
 		} else if (this.alive == true) {
 			this.die();
-			return false;
 		}
-		return true;
+	}
+
+	public boolean getAlive() {
+		return this.alive;
 	}
 
 }

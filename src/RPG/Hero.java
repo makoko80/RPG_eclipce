@@ -1,4 +1,4 @@
-package RPG;
+package Rpg;
 
 import java.util.Random;
 
@@ -6,17 +6,13 @@ public class Hero {
 	String name;
 	int hp;
 	final int FULLHP = 50;
+	final int FULLMP = 20;
 	int mp;
 	int pow;
-	int level;
-	int exp;
-	Weapon weapon;
-	Armor armor;
-	static int money;
 
 	public Hero() {
 		this.name = "ハロルド";
-		this.hp = 40;
+		this.hp = 10;
 		this.mp = 5;
 		this.pow = 10;
 	}
@@ -41,12 +37,19 @@ public class Hero {
 		System.out.println(this.name + "は余裕ぶっこいている");
 	}
 
-	public void heal() {
-		this.mp -= 3;
-		System.out.println(this.name + "は回復魔法をとなえた");
-		int he = Math.min(this.FULLHP - this.hp, 20);
-		this.hp += he;
-		System.out.println(this.name + "は" + he + "ポイント回復");
+	public boolean heal() {
+		boolean turnthrogh = true;
+		if (this.mp < 3) {
+			System.out.println("MPが足りませんね！！！");
+			turnthrogh = false;
+		} else {
+			this.mp -= 3;
+			System.out.println(this.name + "は回復魔法をとなえた");
+			int he = Math.min(this.FULLHP - this.hp, 20);
+			this.hp += he;
+			System.out.println(this.name + "は" + he + "ポイント回復");
+		}
+		return turnthrogh;
 
 	}
 
