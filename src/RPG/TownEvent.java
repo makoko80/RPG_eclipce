@@ -172,7 +172,7 @@ public class TownEvent {
 		talk(70,600,"<|1[はい]2[いいえ]|>");
 		int i = new java.util.Scanner(System.in).nextInt();
 		if(i == 1) {
-			//10G払う
+			//10G払うBag.gold -= 10;
 			talk(70,600,h.getName()+"は10G払った");
 			int r = new java.util.Random().nextInt(3);
 				switch(r) {
@@ -200,7 +200,7 @@ public class TownEvent {
 			int i = new java.util.Scanner(System.in).nextInt();
 			if(i == 1) {
 				talk(70,600,h.getName()+"は100G払った");
-				//お金を払うメソッド
+				//お金を払うメソッド Bag.gold -= 100;
 				talk(70,600,"「さすが！お礼にこれあげる」");
 				talk(70,1000,h.getName()+"は薬草をもらった");
 				//タバコを貰うメソッド
@@ -212,7 +212,7 @@ public class TownEvent {
 				int j = new java.util.Scanner(System.in).nextInt();
 				if(j == 1) {
 					talk(70,600,h.getName()+"は50G払った");
-				//お金を払うメソッド
+				//お金を払うメソッドBag.gold -= 50;
 					talk(70,600,"「さすが！お礼にこれあげる！」");
 					talk(70,600,h.getName()+"はタバコをもらった");
 				//タバコを貰うメソッドb.setTobacco(b.getTobacco() + 1);
@@ -235,7 +235,7 @@ public class TownEvent {
 		int i = new java.util.Scanner(System.in).nextInt();
 		if(i == 1) {
 			talk(70,600,h.getName()+"は20G払った");
-			//お金を払う Bag.money -= 20;
+			//お金を払う Bag.gold -= 20;
 			talk(70,600,"「じゃあ最高の体験を味あわせてア・ゲ・ル♡」");
 			talk(70,600,"「◯×△◯×△◯×△◯×△」");
 			talk(70,600,"「△◯×△◯×△◯×△」");

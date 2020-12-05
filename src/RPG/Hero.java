@@ -18,6 +18,23 @@ public class Hero {
 		this.pow = 10;
 	}
 
+	public void setName(){
+		while(true){
+			System.out.println("[名前を入力してください(6文字以内)]");
+			String name = new java.util.Scanner(System.in).nextLine();
+			if(name.isEmpty()) {
+				System.out.println("文字を入力してください");
+			}else if(name.length() > 6) {
+				System.out.println("名前が長すぎます！");
+			}else {
+				this.name = name;
+				break;
+			}
+		}
+	}
+	public String getName() {
+		return this.name;
+	}
 	public int attack(Monster ps) {
 		int c = new Random().nextInt(4);
 		if (c == 0) {
