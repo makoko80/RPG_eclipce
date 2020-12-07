@@ -6,7 +6,8 @@ public class Main {
 		Hero h = new Hero();
 		Battle b = new Battle();
 		DungeonEvent d = new DungeonEvent();
-
+		TownEvent t = new TownEvent();
+		t.NPC(h);
 
 	}
 
