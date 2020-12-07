@@ -7,15 +7,15 @@ import java.util.Scanner;
 public class Battle {
 	int turn = 1;
 
-	public int enCount(Hero h, int selectFloor) throws Exception {//敵モンスターをランダムで1～3体まで出現させてHero
+	public int enCount(Hero h, ArrayList<Monster> enemy) throws Exception {//敵モンスターをランダムで1～3体まで出現させてHero
 		//一人と戦わせるメソッド
-		int ra = new Random().nextInt(3) + 1;//敵の出現数のランダム整数
+		//		int ra = new Random().nextInt(3) + 1;//敵の出現数のランダム整数
 		int game = 1;//Heroが倒されたかの判定
 		ArrayList<Monster> defeatedMonster = new ArrayList();//倒されたモンスターを入れておく配列
-		ArrayList<Monster> enemy = new ArrayList<>();
-		for (int i = 0; i < ra; i++) {
-			enemy.add(randomEnemyPick(selectFloor));//ランダムで敵と取得してくるメソッド
-		}
+		//		ArrayList<Monster> enemy = new ArrayList<>();
+		//		for (int i = 0; i < ra; i++) {
+		//			enemy.add(randomEnemyPick(selectFloor));//ランダムで敵と取得してくるメソッド
+		//		}
 
 		//ここから戦闘
 		for (Monster m : enemy) {
@@ -57,6 +57,7 @@ public class Battle {
 				case 4:
 					System.out.println("アイテム使用");
 					turnThrogh = false;
+					break;
 				case 5://逃げる処理
 					h.run();
 					time();
@@ -88,17 +89,18 @@ public class Battle {
 			}
 
 			System.out.println("---------------------");
-
 			if (h.hp <= 0) {
-				System.out.println(h.name + "は力尽き、その生涯を終えました");
+				System.out.println(h.name + "は力尽き、目の前が真っ黒になった");
 				game = 0;
 				break;
 			}
 		}
 		System.out.println("戦闘終了");
 		for (Monster m : defeatedMonster) {
-			System.out.println("倒したモンスターの名前" + m.name);
+			System.out.println(m.name);
 		}
+		System.out.println("を倒した");
+		//HeroEXPを計算するメソッド呼び出し
 		System.out.println("---------------------");
 		return game;
 	}
@@ -111,36 +113,36 @@ public class Battle {
 		}
 	}
 
-	public Monster randomEnemyPick(int selectFloor) {
-		int r = new Random().nextInt(3);
-		Monster m = null;
-		Monster[] floorMonster = new Monster[9];
-		floorMonster = monsterList(floorMonster);
-		switch (selectFloor) {
-		case 1:
-			m = floorMonster[r];
-			break;
-		case 2:
-			m = floorMonster[(r + 3)];
-			break;
-		case 3:
-			m = floorMonster[(r + 6)];
-			break;
-		}
-		return m;
-	}
-
-	public Monster[] monsterList(Monster[] floorMonster) {
-		floorMonster[0] = new Slime("ごみ");
-		floorMonster[1] = new PoisonSlime("時代");
-		floorMonster[2] = new Slime("永遠の世界2位さん");
-		floorMonster[3] = new Slime("伝説のスーパー短パン小僧");
-		floorMonster[4] = new Slime("原子力航空母艦「エンタープライズ」");
-		floorMonster[5] = new Slime("しゅーきんぺー");
-		floorMonster[6] = new Slime("ガースー");
-		floorMonster[7] = new Slime("じょんそんぼりす");
-		floorMonster[8] = new Slime("と〇らんぷ");
-		return floorMonster;
-	}
+//	public Monster randomEnemyPick(int selectFloor) {
+//		int r = new Random().nextInt(3);
+//		Monster m = null;
+//		Monster[] floorMonster = new Monster[9];
+//		floorMonster = monsterList(floorMonster);
+//		switch (selectFloor) {
+//		case 1:
+//			m = floorMonster[r];
+//			break;
+//		case 2:
+//			m = floorMonster[(r + 3)];
+//			break;
+//		case 3:
+//			m = floorMonster[(r + 6)];
+//			break;
+//		}
+//		return m;
+//	}
+//
+//	public Monster[] monsterList(Monster[] floorMonster) {
+//		floorMonster[0] = new Slime("ごみ");
+//		floorMonster[1] = new PoisonSlime("時代");
+//		floorMonster[2] = new Slime("永遠の世界2位さん");
+//		floorMonster[3] = new Slime("伝説のスーパー短パン小僧");
+//		floorMonster[4] = new Slime("原子力航空母艦「エンタープライズ」");
+//		floorMonster[5] = new Slime("しゅーきんぺー");
+//		floorMonster[6] = new Slime("ガースー");
+//		floorMonster[7] = new Slime("じょんそんぼりす");
+//		floorMonster[8] = new Slime("と〇らんぷ");
+//		return floorMonster;
+//	}
 
 }

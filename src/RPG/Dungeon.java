@@ -1,5 +1,6 @@
 package Rpg;
 
+import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -8,15 +9,15 @@ public class Dungeon {
 	private int selectFloor;//進む階層
 
 	public Dungeon() {
-		this.floor = 3;
+		this.floor = 1;
 		this.selectFloor = 1;
 	}
 
 	public int dungeonAction(Hero h, int gameLoop) throws Exception {//ダンジョンの進行メイン
 		int dungeonCommand;
-		int Progress = 0;//進行度
+		int Progress = 1;//進行度
 		this.selectFloor = (dungeonSelect(this.floor));//ダンジョン階層を選択
-		while (Progress <= 5) {//ダンジョンでの行動は5回まで、町へ戻るはループ抜ける。
+		while (Progress <= 10) {//ダンジョンでの行動は5回まで、町へ戻るはループ抜ける。
 			System.out.println("現在" + this.selectFloor + "階層");
 			System.out.println("進行度" + Progress);
 			System.out.println(h.name + "HP[" + h.hp + "]" + "MP[" + h.mp + "]");
@@ -28,8 +29,12 @@ public class Dungeon {
 			case 1:
 				gameLoop = moveOn(h, Progress);
 				Progress++;
+
 				if (gameLoop == 0) {
 					Progress = 99;
+				} else if (gameLoop == 2) {
+					this.floor++;
+					gameLoop = 1;
 				}
 				break;
 			case 2:
@@ -44,18 +49,30 @@ public class Dungeon {
 
 			}
 		}
+
 		return gameLoop;
 	}
 
 	public int moveOn(Hero h, int Progress) throws Exception {
 		int r = new Random().nextInt(2);
+		//		r = 1;//テスト
 		int game = 1;
 		Battle b = new Battle();
-		if (r == 1) {
-			game = b.enCount(h, this.selectFloor);
+		if (r == 1 && Progress != 5 && Progress != 10) {
+			int ra = new Random().nextInt(3) + 1;//敵の出現数のランダム整数
+			ArrayList<Monster> enemy = new ArrayList<>();
+			for (int i = 0; i < ra; i++) {
+				enemy.add(randomEnemyPick(selectFloor));//ランダムで敵と取得してくるメソッド
+			}
+			game = b.enCount(h, enemy);
 		} else {
 			System.out.println("ダンジョンイベントだぉ");
-			game = 1;
+			//			if (Progress == 5) {テストコード
+			//				game = 2;
+			//			}
+			//			if (Progress == 5 && this.floor == 3) {
+			//				game = 3;
+			//			}
 			//ダンジョンイベントを呼んでくる
 		}
 		return game;
@@ -80,6 +97,38 @@ public class Dungeon {
 			break;
 		}
 		return f;
+	}
+
+	public Monster randomEnemyPick(int selectFloor) {
+		int r = new Random().nextInt(3);
+		Monster m = null;
+		Monster[] floorMonster = new Monster[9];
+		floorMonster = monsterList(floorMonster);
+		switch (selectFloor) {
+		case 1:
+			m = floorMonster[r];
+			break;
+		case 2:
+			m = floorMonster[(r + 3)];
+			break;
+		case 3:
+			m = floorMonster[(r + 6)];
+			break;
+		}
+		return m;
+	}
+
+	public Monster[] monsterList(Monster[] floorMonster) {
+		floorMonster[0] = new Slime("ごみ");
+		floorMonster[1] = new PoisonSlime("時代");
+		floorMonster[2] = new Slime("永遠の世界2位さん");
+		floorMonster[3] = new Slime("伝説のスーパー短パン小僧");
+		floorMonster[4] = new Slime("原子力航空母艦「エンタープライズ」");
+		floorMonster[5] = new Slime("しゅーきんぺー");
+		floorMonster[6] = new Slime("ガースー");
+		floorMonster[7] = new Slime("じょんそんぼりす");
+		floorMonster[8] = new Slime("と〇らんぷ");
+		return floorMonster;
 	}
 
 	public int getFloor() {

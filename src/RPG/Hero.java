@@ -12,7 +12,7 @@ public class Hero {
 
 	public Hero() {
 		this.name = "ハロルド";
-		this.hp = 10;
+		this.hp = 100;
 		this.mp = 5;
 		this.pow = 10;
 	}

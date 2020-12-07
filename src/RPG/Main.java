@@ -38,11 +38,14 @@ public class Main {
 				Thread.sleep(1000);
 				System.out.println("〇〇「回復しておいたからさっさと行ってこい」");
 				Thread.sleep(1000);
+				h.hp = h.FULLHP;
+				h.mp = h.FULLMP;
 				gameLoop = 1;
 			}
 			System.out.println("--------------------------------------");
 
 		}
+		System.out.println("GAMEOVER");
 
 	}
 
