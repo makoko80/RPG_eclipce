@@ -254,6 +254,73 @@ public class TownEvent {
 		this.bunnyGirltalk ="「あら♪こないだの素敵なお兄さんじゃない！」";
 	}
 
+	public void title() throws Exception{
+		talk(1,0,"　　　　　　　　　　　　　　　　　　　　　　　　　　＊＊＊＊＊＊＊＊　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　");
+		talk(1,0,"　　　　　　＊＊＊　　　　　　　　　　　　　　　＊＊＊　　　　　　＊＊＊　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊　　");
+		talk(1,0,"　　　　　　＊＊＊＊　　　　＊＊　　　　　　　＊＊　　　　　　　　　　＊＊　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊　　");
+		talk(1,0,"　　　　　　　＊＊＊　　　　　＊＊　　　　　＊＊　　　　　　　　　　　　＊＊　　　　　　　　　＊＊＊＊　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　＊＊　　　　　　　　　　　　＊＊　　");
+		talk(1,0,"　　　　　　　＊＊＊　　＊＊＊＊＊＊　　　＊＊　　　　　　　　　　　　　　＊＊　　　　　　　　　＊＊＊　　　＊＊　　　　　　　　　　　　　　　　　　　　　　　　　　＊＊　＊＊＊＊＊＊＊＊＊＊　＊＊　　");
+		talk(1,0,"　　　　　　　＊＊＊　　　＊＊＊　　　　　＊＊　　　　　　　　　　　　　　＊＊　　　　　　　　＊＊＊＊＊＊＊＊＊＊　　　　　　　　　　　　　　　　　　　　　　　　　＊＊　　　　＊＊＊　　　　　＊＊　　");
+		talk(1,0,"　　　　　　　＊＊＊　　　　＊＊　　　　＊＊　　　　　　　　　　　　　　　　＊＊　　　　　　　＊＊＊＊＊＊＊＊＊＊　　　　　　　　　　　　　　　　　　　　　　　　　＊＊　　　　＊＊＊　　　　　＊＊　　");
+		talk(1,0,"　　　　　　　＊＊＊＊　　　　　　　　　＊＊　　　　　　　　　　　　　　　　＊＊　　　　　　＊＊＊　　　　＊＊＊　　　　　　　　　　　　　　　　　　　　　　　　　　＊＊　＊＊＊＊＊＊＊＊＊＊　＊＊　　");
+		talk(1,0,"　　　　　　　＊＊＊＊＊＊　　　　　　　＊＊　　　　　　　　　　　　　　　　＊＊　　　　　＊＊＊＊　　　　＊＊＊　　　　　　　＊＊＊＊＊＊＊＊＊＊＊＊＊＊　　　　　＊＊　＊　　＊＊＊　　　＊　＊＊　　");
+		talk(1,0,"　　　　　　　＊＊＊＊＊＊＊＊　　　　　＊＊　　　　　　　　　　　　　　　　＊＊　　　　＊＊＊＊　　　　＊＊＊　　　　　　　　＊＊＊＊＊＊＊＊＊＊＊＊＊＊　　　　　＊＊　＊　　＊＊＊　　　＊　＊＊　　");
+		talk(1,0,"　　　　　　　＊＊＊　　＊＊＊＊　　　　＊＊　　　　　　　　　　　　　　　　＊＊　　　＊＊＊＊　　　　　＊＊＊　　　　　　　　　　　　　　＊＊＊　　　　　　　　　　＊＊　＊　　＊＊＊　　　＊　＊＊　　");
+		talk(1,0,"　　　　　　　＊＊＊　　　＊＊＊＊　　　＊＊　　　　　　　　　　　　　　　　＊＊　　＊＊＊＊　　　　　＊＊＊　　　　　　　　　　　　　　　＊＊＊　　　　　　　　　　＊＊　＊＊＊＊＊＊＊＊＊＊　＊＊　　");
+		talk(1,0,"　　　　　　　＊＊＊　　　　＊＊＊　　　　＊＊　　　　　　　　　　　　　　＊＊　　　　＊　　　　　　＊＊＊＊　　　　　　　　　　　　　　　＊＊＊　　　　　　　　　　＊＊　　　　＊＊＊　　　　　＊＊　　");
+		talk(1,0,"　　　　　　　＊＊＊　　　　　　　　　　　＊＊　　　　　　　　　　　　　　＊＊　　　　　　　　　　＊＊＊＊　　　　　　　　　　　　　　　　＊＊＊　　　　　　　　　＊＊＊　　　　＊＊＊　　　　　＊＊＊＊");
+		talk(1,0,"　　　　　　　＊＊＊　　　　　　　　　　　　＊＊　　　　　　　　　　　　＊＊　　　　　　　　　　＊＊＊＊　　　　　　　　　　　　　　　　　＊＊＊　　　　　　　　　＊＊＊　　　　＊＊＊　　　　　　＊＊＊");
+		talk(1,0,"　　　　　　　＊＊＊　　　　　　　　　　　　＊＊＊　　　　　　　　　　＊＊＊　　　　　　　　　＊＊＊＊　　　　　　　　　　　　　　　　　　＊＊＊　　　　　　　　　＊＊＊　　　　＊＊＊＊＊　　　　＊＊＊");
+		talk(1,0,"　　　　　　　＊＊＊　　　　　　　　　　　　　＊＊＊　　　　　　　　＊＊＊　　　　　　　　　＊＊＊＊　　　　　　　　　　　　＊　　　　　　＊＊＊　　　　＊＊　　　＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊　");
+		talk(1,0,"　　　　　　　＊＊＊　　　　　　　　　　　　　　　＊＊＊　　　　＊＊＊　　　　　　　　　＊＊＊＊　　　　　　　　　　　　　＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊　　＊＊　＊＊＊＊　　　　　＊＊＊＊＊＊　");
+		talk(1,0,"　　　　　　　＊＊　　　　　　　　　　　　　　　　　＊＊＊＊＊＊　　　　　　　　　　＊＊＊　　　　　　　　　　　　　　　　＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊　　　＊　　　　　　　　　　　　　＊＊　　");
+
+		talk(1,0,"　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　");
+		talk(1,0,"　　　　　　　　　　　　　　　　　　　　　　　　　＊＊＊＊＊＊＊　　　　　　　　　　　　　＊＊＊＊＊＊＊＊　　　　　　　　　　　　　　＊＊＊＊＊＊＊＊　　　　　");
+		talk(1,0,"　　　　　　　　　　　　　　　　　　　　　　　　　＊＊＊＊＊＊＊＊＊　　　　　　　　　　　＊＊＊＊＊＊＊＊＊＊　　　　　　　　　　＊＊＊＊＊＊＊＊＊＊＊　　　　");
+		talk(1,0,"　　　　　　　　　　　　　　　　　　　　　　　　　＊＊＊　　　＊＊＊＊　　　　　　　　　　＊＊＊　　　　＊＊＊　　　　　　　　　＊＊＊＊　　　　　　　　　　　　");
+		talk(1,0,"　　　　　　　　　　　　　　　　　　　　　　　　　＊＊＊　　　　＊＊＊　　　　　　　　　　＊＊＊　　　　　＊＊＊　　　　　　　　＊＊＊　　　　　　　　　　　　　");
+		talk(1,0,"　　　　　　　　　　　　　　　　　　　　　　　　　＊＊＊　　　　＊＊＊　　　　　　　　　　＊＊＊　　　　　＊＊＊　　　　　　　＊＊＊　　　　　　　　　　　　　　");
+		talk(1,0,"　　　　　　　　　　　　　　　　　　　　　　　　　＊＊＊　　　　＊＊＊　　　　　　　　　　＊＊＊　　　　　＊＊＊　　　　　　　＊＊＊　　　　　　　　　　　　　　");
+		talk(1,0,"　　　　　　　　　　　　　　　　　　　　　　　　　＊＊＊　　　＊＊＊＊　　　　　　　　　　＊＊＊　　　　＊＊＊　　　　　　　　＊＊＊　　　＊＊＊＊＊＊＊　　　　");
+		talk(1,0,"　　　　　　　　　　　　　　　　　　　　　　　　　＊＊＊＊＊＊＊＊＊　　　　　　　　　　　＊＊＊　　　＊＊＊＊　　　　　　　　＊＊＊　　　＊＊＊＊＊＊＊　　　　");
+		talk(1,0,"　　　　　　　　　　　　　　　　　　　　　　　　　＊＊＊＊＊＊＊＊　　　　　　　　　　　　＊＊＊＊＊＊＊＊＊　　　　　　　　　＊＊＊　　　　　　　　＊＊　　　　");
+		talk(1,0,"　　　　　　　　　　　　　　　　　　　　　　　　　＊＊＊　　＊＊＊　　　　　　　　　　　　＊＊＊　　　　　　　　　　　　　　　＊＊＊　　　　　　　　＊＊　　　　");
+		talk(1,0,"　　　　　　　　　　　　　　　　　　　　　　　　　＊＊＊　　　＊＊＊　　　　　　　　　　　＊＊＊　　　　　　　　　　　　　　　＊＊＊＊　　　　　　　＊＊　　　　");
+		talk(1,0,"　　　　　　　　　　　　　　　　　　　　　　　　　＊＊＊　　　＊＊＊　　　　　　　　　　　＊＊＊　　　　　　　　　　　　　　　　＊＊＊　　　　　　　＊＊　　　　");
+		talk(1,0,"　　　　　　　　　　　　　　　　　　　　　　　　　＊＊＊　　　　＊＊＊　　　　　　　　　　＊＊＊　　　　　　　　　　　　　　　　　＊＊＊＊　　　　＊＊＊　　　　");
+		talk(1,0,"　　　　　　　　　　　　　　　　　　　　　　　　　＊＊＊　　　　＊＊＊　　　　　　　　　　＊＊＊　　　　　　　　　　　　　　　　　　＊＊＊＊＊＊＊＊＊＊　　　　");
+		talk(1,0,"　　　　　　　　　　　　　　　　　　　　　　　　　＊＊＊　　　　　＊＊＊　　　　　　　　　＊＊＊　　　　　　　　　　　　　　　　　　　　＊＊＊＊＊＊＊　　　　　");
+		System.out.print("																		");
+		talk(1,0,"<|Press The ENTER|>");
+		System.out.print("																																				");
+		System.out.print("制作：とぴあ株式会社 ©2020︎");
+		String i = new java.util.Scanner(System.in).nextLine();
+		System.out.println("");
+		System.out.println("");
+		System.out.println("");
+		System.out.println("");
+		System.out.println("");
+		System.out.println("");
+		System.out.println("");
+		System.out.println("");
+		System.out.println("");
+		System.out.println("");
+		System.out.println("");
+		System.out.println("");
+		System.out.println("");
+		System.out.println("");
+		System.out.println("");
+		System.out.println("");
+		System.out.println("");
+		System.out.println("");
+		System.out.println("");
+		System.out.println("");
+		System.out.println("");
+		System.out.println("");
+		System.out.println("");
+		System.out.println("");
+	}
 
 
 
