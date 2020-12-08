@@ -114,14 +114,14 @@ public class TownEvent {
 				talk(80,1000,"「ダンジョンで危うく倒れそうになったら戻ってきて休むといい！」");
 				talk(80,1000,"「こんな感じで勇者様の冒険はこっちでサポートするから魔王討伐お任せしましたぞ！ハッハッハ」");
 	}
-	public void NPC(Hero h) throws Exception{ //引数にHEROとBAG
+	public void NPC(Hero h, Bag b) throws Exception{ //引数にHEROとBAG
 		label:while(true) {
 		talk(100,600,"<誰と話しますか>");
 		System.out.println("<|1[町長] 2[夢を語る子供] 3["+divinerName+"] 4[社会の底辺] 5[バニーガール]|>");
 		int i = new java.util.Scanner(System.in).nextInt();
 			switch(i) {
 				case 1:
-					Mayor(h);//BAG
+					Mayor(h,b);//BAG
 					continue;
 				case 2:
 					Child();
@@ -130,7 +130,7 @@ public class TownEvent {
 					Diviner(h);
 					continue;
 				case 4:
-					Scum(h);//BAG
+					Scum(h,b);//BAG
 					continue;
 				case 5:
 					BunnyGirl(h);
@@ -140,7 +140,7 @@ public class TownEvent {
 			}
 		}
 	}
-	public void Mayor(Hero h) throws Exception{ //バックインスタンスを引数に
+	public void Mayor(Hero h,Bag b) throws Exception{ //バックインスタンスを引数に
 
 		if( this.mayorFlg == false) {
 			System.out.println("[町長]");
@@ -148,7 +148,8 @@ public class TownEvent {
 			talk(80,1000,"「そうだ！こないだアイテム屋の店主にあまりものとしてもらった薬草があるんだ！」");
 			talk(80,1000,"「よかったら役立てくれ！」");
 			talk(80,1000,h.getName()+"は薬草をもらった");
-			//薬草を貰う b.setYakuso(b.getYakuso()+1);
+			//薬草を貰う
+			b.setYakuso(b.getYakuso()+1);
 			talk(80,1000,"「魔王討伐はみんなが願っている」");
 			talk(80,1000,"「よろしく頼みますぞハッハッハ」");
 		}else {
@@ -180,6 +181,7 @@ public class TownEvent {
 		if(i == 1) {
 			//10G払う
 			talk(80,1000,h.getName()+"は10G払った");
+			Bag.money -= 10;
 			int r = new java.util.Random().nextInt(3);
 				switch(r) {
 				case 0:
@@ -198,7 +200,7 @@ public class TownEvent {
 		}
 
 	}
-	public void Scum(Hero h) throws Exception{ //引数にBAGも渡す
+	public void Scum(Hero h,Bag b) throws Exception{ //引数にBAGも渡す
 		if(this.scumFlg == false) {
 			System.out.println("[社会の底辺]");
 			talk(80,1000,"「お金をくれ！俺は働きたくないんだ！100Gくれ！」");
@@ -207,9 +209,11 @@ public class TownEvent {
 			if(i == 1) {
 				talk(80,1000,h.getName()+"は100G払った");
 				//お金を払うメソッド
+				Bag.money -= 100;
 				talk(80,1000,"「さすが！お礼にこれあげる」");
 				talk(80,1000,h.getName()+"は薬草をもらった");
 				//タバコを貰うメソッド
+				b.setTobacco(b.getTobacco() + 1);
 				talk(80,1000,"「やっぱお金はたかるに限るぜ！ヤッホーい！」");
 				this.scumFlg = true;
 			}if(i == 2) {
@@ -219,9 +223,11 @@ public class TownEvent {
 				if(j == 1) {
 					talk(80,1000,h.getName()+"は50G払った");
 				//お金を払うメソッド
+					Bag.money -= 50;
 					talk(80,1000,"「さすが！お礼にこれあげる！」");
 					talk(80,1000,h.getName()+"はタバコをもらった");
-				//タバコを貰うメソッドb.setTobacco(b.getTobacco() + 1);
+				//タバコを貰うメソッド
+					b.setTobacco(b.getTobacco() + 1);
 					talk(80,1000,"「やっぱお金はたかるに限るぜ！ヤッホーい！」");
 					this.scumFlg = true;
 				}else if(j == 2) {
@@ -241,7 +247,8 @@ public class TownEvent {
 		int i = new java.util.Scanner(System.in).nextInt();
 		if(i == 1) {
 			talk(80,1000,h.getName()+"は20G払った");
-			//お金を払う Bag.money -= 20;
+			//お金を払う
+			Bag.money -= 20;
 			talk(80,1000,"「じゃあ最高の体験を味あわせてア・ゲ・ル♡」");
 			talk(80,1000,"「◯×△◯×△◯×△◯×△」");
 			talk(80,1000,"「△◯×△◯×△◯×△」");
@@ -249,7 +256,8 @@ public class TownEvent {
 			talk(80,1000,h.getName()+"は言葉に表せない体験をした。");
 			talk(80,1000,"「どうだった？私のぱ◯ぱふ、よかったらまたきてね♡」");
 			talk(80,1000,"勇者の経験値が１上がった");
-			//勇者の経験値が上がるメソッド h.setEXP(h.getEXP()+1);
+			//勇者の経験値が上がるメソッド
+			h.setEXP(h.getEXP()+1);
 
 		}else {
 			talk(80,1000,"「あら残念♪」");

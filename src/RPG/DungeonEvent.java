@@ -20,7 +20,7 @@ public void talk(int speed,int waitingTime,String text) throws Exception{
 		 Thread.sleep(waitingTime);
 }
 
-	public int subEvent(Hero h) throws Exception {
+	public int subEvent(Hero h,Bag b) throws Exception {
 		int r = new java.util.Random().nextInt(8);
 		switch(r) {
 			case 0:
@@ -28,25 +28,45 @@ public void talk(int speed,int waitingTime,String text) throws Exception{
 			case 1:
 
 				double p = Math.random();
-				if(p >= 0.9) {/*酒setSake(getSake() + 1)*/}
-				else if(0.9 > p && p >= 0.6){/* 煙幕 b.setEnmaku(getEnmaku() + 1)*/ }
-				else {/*薬草 setYakuso(getYakuso + 1)*/}
+				if(p >= 0.9) {//酒をゲット
+					talk(80,1000,h.getName()+"は宝箱を見つけた！！");
+					talk(80,1000,"中には酒が入っていた！");
+					talk(80,1000,h.getName()+"は酒をバッグにしまった。");
+					b.setSake(b.getSake() + 1);
+
+				}else if(0.9 > p && p >= 0.6){//煙幕をゲット
+					talk(80,1000,h.getName()+"は宝箱を見つけた！！");
+					talk(80,1000,"中には煙幕が入っていた！");
+					talk(80,1000,h.getName()+"は煙幕をバッグにしまった。");
+					b.setEnmaku(b.getEnmaku() + 1);
+				}else {//薬草をゲット
+					talk(80,1000,h.getName()+"は宝箱を見つけた！！");
+					talk(80,1000,"中には薬草が入っていた！");
+					talk(80,1000,h.getName()+"は薬草をバッグにしまった。");
+					b.setYakuso(b.getYakuso() + 1);
+				}
 				break;
 			case 2:
 
-				//お金を拾う(10〜20G)
+
 			case 3:
-				//お金を拾う(10〜20G)Bag.gold -= 20;
+				//お金を拾う(10〜20G)
 				int i = new java.util.Random().nextInt(10)+10;
 				talk(80,1000,h.getName() + "は"+i+"G拾った");
+				Bag.gold += i;
 			break;
 			case 4:
-				//道端の石で転ぶ(-5ダメージ) h.setHp(getHp() - 5);
+				//道端の石で転ぶ(-5ダメージ)
+				talk(80,1000,h.getName()+"は道端の石で転んだ");
+				talk(80,1000,h.getName()+"は５ダメージ受けた！");
+				h.setHp(h.getHp() - 5);
 
 			break;
 			case 5:
 				//道中の足湯に使った(HP10回復)h.setHp(getHp() - 10);
-
+				talk(80,1000,h.getName()+"は道中の足湯に浸かった");
+				talk(80,1000,h.getName()+"はHPを10回復した！");
+				h.setHp(h.getHp() + 10);
 			break;
 			case 6:
 
@@ -70,7 +90,7 @@ public void talk(int speed,int waitingTime,String text) throws Exception{
 		return 1;
 	}
 
-	public int dEvent(int progress,int floor ,Hero h) throws Exception{//戻り値(敵に負けたときや買った時)を返すこと BAGも引数にいれる
+	public int dEvent(int progress,int floor ,Hero h,Bag b,Weapon w) throws Exception{//戻り値(敵に負けたときや買った時)を返すこと BAGも引数にいれる
 		//Weaponインスタンス
 		if(progress == 5 && floor == 1 ) { //さすらい勇者
 			if( Adventurer == 0) {
@@ -88,7 +108,8 @@ public void talk(int speed,int waitingTime,String text) throws Exception{
 				talk(80,1000,"「ここのダンジョンは階層が上がってくるほど、だんだん強くなってくるからね！」");
 				talk(80,1000,"「そうだ！君はまだダンジョンにきたばっかりだと思うから良いものあげるよ！」");
 				talk(70,1000,"勇者は薬草をもらった");
-				//薬草を貰うメソッド薬草 setYakuso(getYakuso + 1)
+				//薬草を貰うメソッド薬草
+				b.setYakuso(b.getYakuso + 1);
 				talk(80,1000,"「ダンジョンは危ないからね。体力が無くなったらこれで回復するといいよ！」");
 				talk(80,1000,"「じゃあもういくよ！また会えるといいね！」");
 				talk(80,1000,"さすらい勇者はダンジョンの奥地へと進んで行った");
@@ -115,12 +136,12 @@ public void talk(int speed,int waitingTime,String text) throws Exception{
 				talk(80,1000,"青いタヌキは襲いかかってきた");
 
 				//戦闘
-				//int judge = b.enCount(h);
+				int judge = b.enCount(h);
 				//バトル終了
-				/*if(h == 0) {
-				 * this.Aotanuki = 1
+				if(judge == 0) {
+					this.Aotanuki = 1;
 					return 0;
-				}*/
+				}
 				talk(80,1000,"青いタヌキはこっぱみじんに壊れた");
 				talk(80,1000,"どうやらこいつはロボットだったようだ。。");
 				talk(80,1000,"まあ気にせず次に進むか。。");
@@ -134,18 +155,18 @@ public void talk(int speed,int waitingTime,String text) throws Exception{
 				talk(80,1000,"しつこいなぁ今度は八つ裂きにしてどら焼き代わりのデザートにしてやろうかい？");
 				talk(80,1000,"青いタヌキは襲いかかってきた");
 				//戦闘
-				//int judge = b.enCount(h);
+				int judge = b.enCount(h);
 				//バトル終了
-				/*if(h == 0) {
-				 * this.Aotanuki = 1
-					return h;
-				}*/
+				if(judge == 0) {
+					this.Aotanuki = 1;
+					return 0;
+				}
 				talk(80,1000,"青いタヌキはこっぱみじんに壊れた");
 				talk(80,1000,"どうやらこいつはロボットだったようだ。。");
 				talk(80,1000,"まあ気にせず次に進むか。。");
 				talk(80,1000,h.getName()+"は前に進んだ");
 				this.Aotanuki = 2;
-				return 2;//return i
+				return 2;//return
 
 			}else {
 				talk(80,1000,"青いタヌキの残骸が残っている");
@@ -166,7 +187,7 @@ public void talk(int speed,int waitingTime,String text) throws Exception{
 				int i = new java.util.Scanner(System.in).nextInt();
 				switch(i) {
 				case 1:
-					this.AEvent(h);
+					this.AEvent(h,b);
 
 					break;
 				case 2:
@@ -174,7 +195,7 @@ public void talk(int speed,int waitingTime,String text) throws Exception{
 					talk(80,1000,"1[渡す] 2[渡さない]");
 					int q = new java.util.Scanner(System.in).nextInt();
 					if(q == 1) {
-						this.AEvent(h);
+						this.AEvent(h,b);
 						break;
 					}else if(q == 2){
 						talk(80,1000,"あぁぁぁぁぁぁぁ！！！");
@@ -182,7 +203,8 @@ public void talk(int speed,int waitingTime,String text) throws Exception{
 						talk(80,1000,"(ん？、冒険者のポケットに何か入っているな)");
 						talk(80,1000,"(何かすごい物が入っているぞ？)");
 						talk(80,1000,h.getName() + "はエリクサーを手に入れた");
-							//エリクサーを手に入れる setElixir(getElixir() + 1)
+							//エリクサーを手に入れる
+						b.setElixir(b.getElixir() + 1);
 						talk(80,1000,"(これはHPとMPが完全回復するアイテムじゃないか！)");
 						talk(80,1000,"(なんでこれを使わなかったんだろう。。)");
 						talk(80,1000,"(ま、考えても仕方ないしいいか。)");
@@ -236,12 +258,12 @@ public void talk(int speed,int waitingTime,String text) throws Exception{
 					talk(80,1000,"ムフィは襲いかかってきた");
 				}
 				//戦闘
-				//int judge = b.enCount(h);
+				int judge = b.enCount(h);
 				//バトル終了
-				/*if(h == 0) {
-				 * this.Pirate = 1
+				if(judge == 0) {
+					this.Pirate = 1;
 					return 0;
-				}*/
+				}
 
 				talk(80,1000,"「うぐっうぐっ。」(ゴム海賊は泣き出した)");
 				talk(80,1000,"「何が海賊王だ！！俺は！弱い！！」");
@@ -255,17 +277,18 @@ public void talk(int speed,int waitingTime,String text) throws Exception{
 				talk(80,1000,"ムフィは襲いかかってきた");
 
 				//戦闘
-				//int h = b.enCount(h);
+				int judge = b.enCount(h);
 				//バトル終了
-				/*if(h == 0) {
+				if(judge == 0) {
+					this.Pirate = 1;
 					return 0;
-				}*/
+				}
 				talk(80,1000,"「うぐっうぐっ。」(ゴム海賊は泣き出した)");
 				talk(80,1000,"「何が海賊王だ！！俺は！弱い！！」");
 				talk(80,1000,"「もうおまえなんかあっちいけ！！」");
 				talk(80,1000,h.getName()+"は前に進んだ");
 				this.Pirate = 2;
-				return 1;//return h;
+				return 2;//return h;
 
 			}else {
 				talk(80,1000,"「うぐっうぐっ。」");
@@ -287,13 +310,13 @@ public void talk(int speed,int waitingTime,String text) throws Exception{
 				talk(80,1000,"(この先に何かあるかもしれない。)");
 				talk(80,1000,"<先に進みますか？>");
 				talk(80,1000,"1[はい] 2[いいえ]");
-				LEvent(h);
+				LEvent(h,w);
 			}else if(this.LegendSword == 1) {
 				talk(80,1000,"(ここは前にきた分かれ道があった場所だ)");
 				talk(80,1000,"(この先にはきっと何か意味のあるものが隠されてる気がする。)");
 				talk(80,1000,"<先に進みますか？>");
 				talk(80,1000,"1[はい] 2[いいえ]");
-				LEvent(h);
+				LEvent(h,w);
 			}else {
 
 			}
@@ -312,15 +335,15 @@ public void talk(int speed,int waitingTime,String text) throws Exception{
 				talk(80,1000,"(来るっ！)");
 				talk(80,1000,"魔王が襲いかかってきた!");
 				//戦闘
-				//int judge = b.enCount(h);
+				int judge = b.enCount(h);
 				//バトル終了
-				/*if(judge == 0) {
+				if(judge == 0) {
 				 	LastBoss = 1;
 					return 0;
 				}else if(judge == 1){
 					LastBoss2(h);
 				}
-				*/
+
 				LastBoss2(h);
 
 
@@ -332,22 +355,22 @@ public void talk(int speed,int waitingTime,String text) throws Exception{
 				talk(80,1000,"いいだろう今度こそあの世に送ってやろうグハハハ！");
 				talk(80,1000,"魔王が襲いかかってきた");
 				//戦闘
-				//int judge = b.enCount(h);
+				int judge = b.enCount(h);
 				//バトル終了
-				/*if(judge == 0) {
+				if(judge == 0) {
 				 	this.LastBoss = 1;
 					return 0;
 				}else if(judge == 1){
 					this.LastBoss2();
 				}
-				*/
+
 				LastBoss2(h);
 			}
 			return 1;
 		}
 		return 1;
 	}
-	public void LEvent(Hero h ) throws Exception{ //Weaponも引数にいれる。w.haveLegend();
+	public void LEvent(Hero h ,Weapon w) throws Exception{ //Weaponも引数にいれる。w.haveLegend();
 			int j = new java.util.Scanner(System.in).nextInt();
 				if(j == 1) {
 					label1: while(true) {
@@ -390,8 +413,10 @@ public void talk(int speed,int waitingTime,String text) throws Exception{
 										talk(70,1000,h.getName()+"は伝説の剣を手に入れた！");
 										talk(70,1000,"伝説の剣を装備しますか？");
 										talk(70,1000,"|1[はい] 2[いいえ]|");
-										//勇者の剣を手に入れるメソッド w.haveLegend()
-										//装備w.equipLegend();
+										//勇者の剣を手に入れるメソッド
+										w.haveLegend();
+										//装備
+										w.equipLegend();
 
 										talk(80,1000,"勇者は最初の分かれ道のところに戻った");
 										talk(80,1000,"(魔王の邪悪な力がどんどん近づいているのを感じる)");
@@ -430,7 +455,7 @@ public void talk(int speed,int waitingTime,String text) throws Exception{
 				}
 
 	}
-	public void AEvent(Hero h) throws Exception{ // BAG型もいれる
+	public void AEvent(Hero h ,Bag b) throws Exception{ // BAG型もいれる
 		talk(80,1000,h.getName()+"は薬草を渡した");
 		//薬草を渡す
 		talk(70,1000,"さすらいの冒険者は回復した");
@@ -475,14 +500,13 @@ public void talk(int speed,int waitingTime,String text) throws Exception{
 			if(i == 1) {
 			talk(80,1000,"「なんだと？世界がいらぬと言うのか。。じゃあ我の手でひねり潰してくれるわ！！」");
 			//→第２形態と戦闘
-			//int judge = b.enCount(h);モンスター型も入れる
+			int judge = b.enCount(h);//モンスター型も入れる
 			//バトル終了
-			/*if(judge == 0) {
+			if(judge == 0) {
+				this.LastBoss = 1;
 				return 0;
-			}else if(judge == 1){
-				return 3;
 			}
-			*/
+
 			return 3; //仮
 			}else if(i != 1) {
 				talk(80,1000,"本当に仲間になりますか？");
