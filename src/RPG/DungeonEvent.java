@@ -455,11 +455,13 @@ public void talk(int speed,int waitingTime,String text) throws Exception{
 	public void AEvent(Hero h ,Bag b) throws Exception{ // BAG型もいれる
 		talk(80,1000,h.getName()+"は薬草を渡した");
 		//薬草を渡す
+		b.setYakuso(b.getYakuso() - 1);
 		talk(70,1000,"さすらいの冒険者は回復した");
 		System.out.println("[さすらい冒険者]");
 		talk(80,1000,"「ありがとう！おかげで助かったよ！これでまた戦えるぞ！」");
 		talk(70,1000,"「これはお礼さ。使ってくれ！」");
 		//エリクサーを貰う
+		b.setElixir(b.getElixir() + 1);
 		System.out.println("[さすらい冒険者]");
 		talk(70,800,"「これは最強のアイテムでHPとMPを完全回復できるんだ！」");
 		talk(70,800,"「だけど貴重なアイテムだから使い所は考えてね！」");
