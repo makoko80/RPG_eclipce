@@ -64,20 +64,7 @@ public class TownEvent {
 				talk(80,1000,"「ところでまだおぬしの名前を聞いてなかったな」");
 				talk(80,1000,"「名はなんというのじゃ？」");
 
-			/*public void setName(){
-					while(true){
-					System.out.println("[名前を入力してください(6文字以内)]");
-					String name = new java.util.Scanner(System.in).nextLine();
-					if(name.isEmpty()) {
-						System.out.println("文字を入力してください");
-					}else if(name.length() > 6) {
-						System.out.println("名前が長すぎます！");
-					}else {
-						this.name = name;
-						break;
-					}
-				}
-			}*/
+
 				h.setName();
 				talk(80,1000,"「そうか" + h.getName() + "というのか!」");
 				if(h.getName().equals("ほりかつ")) {

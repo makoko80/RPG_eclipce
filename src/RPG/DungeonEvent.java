@@ -506,7 +506,7 @@ public void talk(int speed,int waitingTime,String text) throws Exception{
 				return 0;
 			}
 
-			return 3; //仮
+			return 3;
 			}else if(i != 1) {
 				talk(80,1000,"本当に仲間になりますか？");
 				System.out.println("<1[はい] 2[いいえ]>");
