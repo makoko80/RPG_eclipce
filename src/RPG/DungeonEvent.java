@@ -136,7 +136,7 @@ public void talk(int speed,int waitingTime,String text) throws Exception{
 				talk(80,1000,"青いタヌキは襲いかかってきた");
 
 				//戦闘
-				int judge = b.enCount(h);
+				int judge = b.enCount(h);//モンスター型も入れる
 				//バトル終了
 				if(judge == 0) {
 					this.Aotanuki = 1;
@@ -155,7 +155,7 @@ public void talk(int speed,int waitingTime,String text) throws Exception{
 				talk(80,1000,"しつこいなぁ今度は八つ裂きにしてどら焼き代わりのデザートにしてやろうかい？");
 				talk(80,1000,"青いタヌキは襲いかかってきた");
 				//戦闘
-				int judge = b.enCount(h);
+				int judge = b.enCount(h);//モンスター型も入れる
 				//バトル終了
 				if(judge == 0) {
 					this.Aotanuki = 1;
@@ -258,7 +258,7 @@ public void talk(int speed,int waitingTime,String text) throws Exception{
 					talk(80,1000,"ムフィは襲いかかってきた");
 				}
 				//戦闘
-				int judge = b.enCount(h);
+				int judge = b.enCount(h);//モンスター型も入れる
 				//バトル終了
 				if(judge == 0) {
 					this.Pirate = 1;
@@ -277,7 +277,7 @@ public void talk(int speed,int waitingTime,String text) throws Exception{
 				talk(80,1000,"ムフィは襲いかかってきた");
 
 				//戦闘
-				int judge = b.enCount(h);
+				int judge = b.enCount(h);//モンスター型も入れる
 				//バトル終了
 				if(judge == 0) {
 					this.Pirate = 1;
@@ -335,16 +335,13 @@ public void talk(int speed,int waitingTime,String text) throws Exception{
 				talk(80,1000,"(来るっ！)");
 				talk(80,1000,"魔王が襲いかかってきた!");
 				//戦闘
-				int judge = b.enCount(h);
+				int judge = b.enCount(h);//モンスター型も入れる
 				//バトル終了
 				if(judge == 0) {
 				 	LastBoss = 1;
 					return 0;
-				}else if(judge == 1){
-					LastBoss2(h);
-				}
 
-				LastBoss2(h);
+				LastBoss2(h);//モンスター型も入れる
 
 
 
@@ -612,11 +609,11 @@ public void talk(int speed,int waitingTime,String text) throws Exception{
 		talk(0,100,"　　　＊＊＊＊　　　　　　　　　　　　　　＊＊＊　　　　　　　＊＊＊＊＊＊＊＊　　　　＊＊＊＊＊＊＊　　　　　　＊＊＊＊＊＊＊　　　　＊＊＊＊＊＊＊　　　　　　　　　　　　　　");
 		talk(0,100,"　　　＊＊＊＊　　　　　　　　　　　　＊＊＊＊＊＊　　　　　　＊＊＊＊＊＊＊＊＊　　　　＊＊＊＊＊　　　　　　　＊＊＊＊＊　　　　　　　　　　＊＊＊＊　　　　　　　　　　　　　");
 		talk(0,100,"　　　＊＊＊＊　　　　　　　　　　　　＊＊＊＊＊＊＊　　　　　＊＊＊　　＊＊＊＊　　　＊＊＊　　　　　　　　　　＊＊＊＊　　　　　　　　　＊＊＊＊＊＊　　　　　　　　　　　　　");
-		talk(0,100,	"　　　＊＊＊＊　　　　　　　　　　　　＊＊＊　＊＊＊　　　　　＊＊＊　　＊＊＊＊　　　＊＊＊＊＊＊＊　　　　　　＊＊＊＊　　　　　　　＊＊＊＊＊＊＊＊　　　　　　　　　　　　　");
-		talk(0,100,	"　　　＊＊＊＊　　　　　　　　　　　＊＊＊＊　＊＊＊　　　　　＊＊＊　　＊＊＊＊　　　＊＊＊＊＊＊＊＊　　　　　＊＊＊＊　　　　　　　＊＊＊　＊＊＊＊　　　　　　　　　　　　　");
-		talk(0,100,	"　　　　＊＊＊＊＊＊＊＊＊　　　　　　＊＊＊　＊＊＊　　　　　＊＊＊　　＊＊＊＊　　　＊＊＊　　＊＊＊＊　　　　＊＊＊＊　　　　　　＊＊＊＊　＊＊＊＊　　　　　　　　　　　　　");
-		talk(0,100,	"　　　　　＊＊＊＊＊＊＊＊　　　　　　＊＊＊＊＊＊＊　　　　　＊＊＊　　＊＊＊＊　　　＊＊＊　　＊＊＊＊　　　　＊＊＊＊　　　　　　　＊＊＊＊＊＊＊＊　　　　　　　　　　　　　");
-		talk(0,100,	"　　　　　　＊＊＊＊＊＊　　　　　　　　＊＊＊＊＊　　　　　　＊＊＊　　＊＊＊　　　　＊＊＊＊＊＊＊＊　　　　　＊＊＊　　　　　　　　＊＊＊＊＊＊＊＊　　　　　　　　　　　　　");
+		talk(0,100,"　　　＊＊＊＊　　　　　　　　　　　　＊＊＊　＊＊＊　　　　　＊＊＊　　＊＊＊＊　　　＊＊＊＊＊＊＊　　　　　　＊＊＊＊　　　　　　　＊＊＊＊＊＊＊＊　　　　　　　　　　　　　");
+		talk(0,100,"　　　＊＊＊＊　　　　　　　　　　　＊＊＊＊　＊＊＊　　　　　＊＊＊　　＊＊＊＊　　　＊＊＊＊＊＊＊＊　　　　　＊＊＊＊　　　　　　　＊＊＊　＊＊＊＊　　　　　　　　　　　　　");
+		talk(0,100,"　　　　＊＊＊＊＊＊＊＊＊　　　　　　＊＊＊　＊＊＊　　　　　＊＊＊　　＊＊＊＊　　　＊＊＊　　＊＊＊＊　　　　＊＊＊＊　　　　　　＊＊＊＊　＊＊＊＊　　　　　　　　　　　　　");
+		talk(0,100,"　　　　　＊＊＊＊＊＊＊＊　　　　　　＊＊＊＊＊＊＊　　　　　＊＊＊　　＊＊＊＊　　　＊＊＊　　＊＊＊＊　　　　＊＊＊＊　　　　　　　＊＊＊＊＊＊＊＊　　　　　　　　　　　　　");
+		talk(0,100,"　　　　　　＊＊＊＊＊＊　　　　　　　　＊＊＊＊＊　　　　　　＊＊＊　　＊＊＊　　　　＊＊＊＊＊＊＊＊　　　　　＊＊＊　　　　　　　　＊＊＊＊＊＊＊＊　　　　　　　　　　　　　");
 
 		talk(0,100,"　　　　　　　　　　　　　　　　　　　　　　　　　　　＊＊＊＊　　　　　　　　　　　　　　　　　　　　　　　　　　　＊＊＊　　　　　　　　　　　　　　　　　　　　　　　　　　　");
 		talk(0,100,"　　　　＊＊＊　　　　　　　　　　　　　　　　　　　　＊＊＊＊　　　　　　　　　　　　　　　　　　＊＊＊　　　　　　＊＊＊　　　　　　　　　　　　　　　　　　　　　　　　　　　");
@@ -638,8 +635,8 @@ public void talk(int speed,int waitingTime,String text) throws Exception{
 		talk(0,100,"　　　　　＊＊　　　　　　　＊＊＊＊　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　");
 		talk(0,100,"　　　＊＊＊＊＊＊　　　　　＊＊＊＊　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　");
 		talk(0,100,"　　　＊＊＊＊＊＊　　　　　＊＊＊＊　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　");
-		talk(0,100,"　　＊＊＊＊　　　　　　　　＊＊＊　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　");
-		talk(0,100,"　　　＊＊＊＊　　　　　　　＊＊＊　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　");
+		talk(0,100,"　　＊＊＊＊　　　　　　　　＊＊＊＊　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　");
+		talk(0,100,"　　　＊＊＊＊　　　　　　　＊＊＊＊　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　");
 		talk(0,100,"　　　＊＊＊＊＊＊　　　　　　＊＊　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　");
 		talk(0,100,"　　　　　＊＊＊＊＊　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　");
 		talk(0,100,"　　＊＊＊　＊＊＊＊　　　　　＊＊　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　");
