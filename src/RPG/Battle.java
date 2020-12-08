@@ -30,8 +30,8 @@ public class Battle {
 				System.out.print(m.name + " HP[" + m.hp + "]");
 			}
 			System.out.println();
-			System.out.println(h.name + "HP[" + h.hp + "/" + h.FULLHP + "]"
-					+ "MP[" + h.mp + "/" + h.FULLMP + "]");
+			System.out.println(h.getName() + "HP[" + h.getHP() + "/" + h.getHPMAX() + "]"
+					+ "MP[" + h.getMP() + "/" + h.getMPMAX() + "]");
 			System.out.print("[1:戦う2:回復3:モンスター図鑑4:アイテム使用5:逃げる]>");
 			try {
 				int command = new Scanner(System.in).nextInt();//入力したコマンドで分岐処理
@@ -89,8 +89,8 @@ public class Battle {
 			}
 
 			System.out.println("---------------------");
-			if (h.hp <= 0) {
-				System.out.println(h.name + "は力尽き、目の前が真っ黒になった");
+			if (h.getHP() <= 0) {
+				System.out.println(h.getName() + "は力尽き、目の前が真っ黒になった");
 				game = 0;
 				break;
 			}

@@ -20,8 +20,8 @@ public class Slime extends Monster {
 			break;
 		default:
 			System.out.println(this.name + "の攻撃");
-			h.hp -= this.pow;
-			System.out.println(h.name + "に" + this.pow + "のダメージ");
+			h.setHP(h.getHP() - this.pow);
+			System.out.println(h.getName() + "に" + this.pow + "のダメージ");
 			break;
 		}
 	}

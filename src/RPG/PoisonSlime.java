@@ -21,9 +21,9 @@ public class PoisonSlime extends Slime {
 			break;
 		case 1:
 			System.out.println(this.name + "のどくどく");
-			int dmg = h.FULLHP / 5;
-			h.hp -= dmg;
-			System.out.println(h.name + "は" + dmg + "のダメージを受けた");
+			int dmg = h.getHPMAX() / 5;
+			h.setHP(h.getHP() - dmg);
+			System.out.println(h.getName() + "は" + dmg + "のダメージを受けた");
 			break;
 		default:
 			super.attack(h);

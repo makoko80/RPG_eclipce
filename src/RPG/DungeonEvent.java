@@ -1,4 +1,4 @@
-package RPG;
+package Rpg;
 public class DungeonEvent {
 
 private int Adventurer;

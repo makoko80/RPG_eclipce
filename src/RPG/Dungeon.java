@@ -20,7 +20,7 @@ public class Dungeon {
 		while (Progress <= 10) {//ダンジョンでの行動は5回まで、町へ戻るはループ抜ける。
 			System.out.println("現在" + this.selectFloor + "階層");
 			System.out.println("進行度" + Progress);
-			System.out.println(h.name + "HP[" + h.hp + "]" + "MP[" + h.mp + "]");
+			System.out.println(h.getName() + "HP[" + h.getHP() + "]" + "MP[" + h.getMP() + "]");
 			System.out.println("コマンド選択");
 			System.out.println("----------------");
 			System.out.print("1[進む] 2[アイテム使用] 3[町に戻る]>");
